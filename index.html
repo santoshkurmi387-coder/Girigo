@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <title>기리고</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- ══ SCREEN 1: HOME ══ -->
+  <div id="s-home" class="screen active">
+    <div class="home-inner">
+      <p class="top-label">기리고</p>
+      <div class="hands-wrap" id="hands-home">
+        <img src="hands.svg" class="hands-img" id="hands-img" alt="기리고"/>
+        <div class="ring r1"></div>
+        <div class="ring r2"></div>
+        <div class="ring r3"></div>
+      </div>
+      <button class="wish-btn" id="btn-wish">원 빌기</button>
+    </div>
+    <div class="ambient-line"></div>
+  </div>
+
+  <!-- ══ SCREEN 2: CAMERA / RECORD ══ -->
+  <div id="s-camera" class="screen">
+    <div class="cam-top">
+      <span class="cam-title">기리고</span>
+      <span class="cam-timer" id="cam-timer">04:00:00</span>
+    </div>
+
+    <div class="cam-frame" id="cam-frame">
+      <video id="video" autoplay playsinline muted></video>
+      <!-- Hands overlay on camera -->
+      <div class="cam-hands-overlay" id="cam-hands">
+        <img src="hands.svg" class="cam-hands-img"/>
+        <div class="cam-ring cr1"></div>
+        <div class="cam-ring cr2"></div>
+      </div>
+      <!-- Recording indicator -->
+      <div class="rec-badge" id="rec-badge" style="display:none">
+        <span class="rec-dot-live"></span> REC
+      </div>
+    </div>
+
+    <div class="cam-bottom">
+      <p class="cam-hint" id="cam-hint">카메라를 보고 소원을 말하세요</p>
+      <button class="rec-btn" id="btn-rec">
+        <span class="rec-inner" id="rec-inner"></span>
+      </button>
+      <p class="rec-sub" id="rec-sub">눌러서 시작</p>
+    </div>
+  </div>
+
+  <!-- ══ SCREEN 3: REVIEW / TRANSCRIBE ══ -->
+  <div id="s-review" class="screen">
+    <div class="review-inner">
+      <div class="review-hands-wrap">
+        <img src="hands.svg" class="review-hands"/>
+        <div class="ring r1"></div>
+        <div class="ring r2"></div>
+      </div>
+      <div class="review-box">
+        <p class="review-label">소원이 감지되었습니다</p>
+        <p class="wish-typed" id="wish-typed"></p>
+        <span class="cursor" id="cursor">|</span>
+      </div>
+      <div class="review-btns" id="review-btns" style="display:none">
+        <button class="btn-erase" id="btn-erase">지우기</button>
+        <button class="btn-send"  id="btn-send">전송</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SCREEN 4: TRANSMITTING ══ -->
+  <div id="s-transmit" class="screen">
+    <div class="transmit-inner">
+      <div class="t-hands-wrap">
+        <img src="hands.svg" class="t-hands"/>
+        <div class="t-ring tr1"></div>
+        <div class="t-ring tr2"></div>
+        <div class="t-ring tr3"></div>
+      </div>
+      <p class="t-label">전송 중</p>
+    </div>
+  </div>
+
+  <!-- ══ SCREEN 5: COUNTDOWN ══ -->
+  <div id="s-count" class="screen">
+    <div class="count-inner">
+      <img src="hands.svg" class="count-hands"/>
+      <p class="count-top">소원이 접수되었습니다</p>
+      <div class="wish-pill" id="wish-pill"></div>
+      <div class="count-block">
+        <p class="count-label">남은 시간</p>
+        <p class="count-digits" id="count-digits">24:00:00</p>
+        <div class="count-bar-bg"><div class="count-bar" id="count-bar"></div></div>
+      </div>
+      <p class="count-warn">24시간 안에 전달하지 않으면<br/>대가를 치릅니다</p>
+      <button class="btn-pass" id="btn-pass">전달하기</button>
+      <button class="btn-again" id="btn-again">처음으로</button>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
